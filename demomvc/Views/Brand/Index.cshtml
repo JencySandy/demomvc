@@ -1,0 +1,44 @@
+﻿@model List<Brand>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    <div class="Container">
+    <div class="row mb-4">
+    <div class="col-md-6 text-uppercase">
+    <h2> Brand List</h2></div>
+    </div>
+    <div class="col-md-6 text-end">
+            <a asp-asp-controller="Brand" asp-action="Create" class="btn-primary"><i class="bi bi-cloud-plus-fill"></i>Create </a>
+    </div>
+    <hr />
+    @if(Model.Count>0)
+        {
+            <table class="table-bordered table-striped">
+                <thead>
+                    <tr>Name</tr>
+                    <tr>Established Year</tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>@item.Name</tr>
+                        <tr>@item.EstablishedYear</tr>
+                    }
+                </tbody>
+            </table>
+        }
+
+        else
+        {
+            <div class="container">
+            <div class="row"></div>
+            <div class="col-md-12">
+            <h3>No Records Found</h3></div></div>
+
+        }
+
+
+    </div>
+   }
